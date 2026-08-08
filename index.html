@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vision Crafters Assets</title>
+    <style>
+      :root {
+        --bg: #04040f;
+        --bg-alt: #0b1114;
+        --panel: rgba(12, 20, 24, 0.9);
+        --line: rgba(34, 165, 175, 0.2);
+        --cyan: #22a5af;
+        --cyan-soft: #69d6de;
+        --orange: #ff8a1f;
+        --paper: #eef6f5;
+        --muted: #8aa4a1;
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        background: var(--bg);
+        color: var(--paper);
+        font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top right, rgba(34, 165, 175, 0.22), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(255, 138, 31, 0.16), transparent 22%),
+          linear-gradient(180deg, #060712 0%, #04040f 100%);
+      }
+
+      .shell {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0 64px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 24px;
+        align-items: center;
+        margin-bottom: 36px;
+      }
+
+      .hero-mark {
+        width: 100px;
+        height: 100px;
+        border-radius: 24px;
+        background: linear-gradient(145deg, rgba(34, 165, 175, 0.18), rgba(255, 138, 31, 0.08));
+        border: 1px solid rgba(34, 165, 175, 0.26);
+        display: grid;
+        place-items: center;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+      }
+
+      .hero-mark img {
+        width: 64px;
+        height: 64px;
+        display: block;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--cyan);
+        font-size: clamp(34px, 6vw, 62px);
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .lede {
+        max-width: 760px;
+        margin: 14px 0 0;
+        color: #bfd0ce;
+        font-size: 17px;
+        line-height: 1.65;
+      }
+
+      .meta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 22px 0 0;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--paper);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .divider {
+        display: grid;
+        grid-template-columns: 1fr 180px;
+        height: 3px;
+        margin: 34px 0 28px;
+      }
+
+      .divider span:first-child { background: var(--cyan); }
+      .divider span:last-child { background: var(--orange); }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        padding: 22px;
+        backdrop-filter: blur(10px);
+        min-height: 100%;
+      }
+
+      .preview {
+        min-height: 190px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        background:
+          linear-gradient(rgba(34, 165, 175, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 165, 175, 0.03) 1px, transparent 1px),
+          #060b0d;
+        background-size: 32px 32px, 32px 32px;
+      }
+
+      .preview img {
+        max-width: min(100%, 240px);
+        max-height: 150px;
+        display: block;
+      }
+
+      .name {
+        margin: 0 0 6px;
+        font-size: 18px;
+        color: var(--paper);
+      }
+
+      .sub {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .url {
+        display: block;
+        margin: 0 0 16px;
+        color: var(--cyan-soft);
+        font-size: 13px;
+        line-height: 1.6;
+        word-break: break-all;
+        text-decoration: none;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        color: var(--paper);
+        background: rgba(255, 255, 255, 0.03);
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .button.primary {
+        background: var(--cyan);
+        color: var(--bg);
+        border-color: var(--cyan);
+      }
+
+      .foot {
+        margin-top: 28px;
+        color: #6f8582;
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 820px) {
+        .hero { grid-template-columns: 1fr; }
+        .grid { grid-template-columns: 1fr; }
+        .divider { grid-template-columns: 1fr 90px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-mark">
+          <img src="/logo-icon.png" alt="Vision Crafters logo">
+        </div>
+        <div>
+          <p class="eyebrow">Permanent Asset Library</p>
+          <h1>Vision Crafters Assets</h1>
+          <p class="lede">
+            Public, stable file links for signatures, websites, proposals, and client-facing materials.
+            Use the direct asset URLs below anywhere a permanent hosted file is required.
+          </p>
+          <div class="meta">
+            <span class="pill">assets.visioncrafters.ro</span>
+            <span class="pill">static hosting</span>
+            <span class="pill">email-safe links</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </div>
+
+      <section class="grid">
+        <article class="card">
+          <div class="preview">
+            <img src="/logo-icon.png" alt="Logo icon">
+          </div>
+          <h2 class="name">Logo Icon</h2>
+          <p class="sub">Primary icon asset for email signatures, avatars, and compact brand placements.</p>
+          <a class="url" href="/logo-icon.png">https://assets.visioncrafters.ro/logo-icon.png</a>
+          <div class="actions">
+            <a class="button primary" href="/logo-icon.png">Open Asset</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="preview">
+            <img src="/visioncrafters-logo-transparent.png" alt="Transparent logo">
+          </div>
+          <h2 class="name">Transparent Logo</h2>
+          <p class="sub">Transparent-background logo for dark or mixed layouts where the background must show through.</p>
+          <a class="url" href="/visioncrafters-logo-transparent.png">https://assets.visioncrafters.ro/visioncrafters-logo-transparent.png</a>
+          <div class="actions">
+            <a class="button primary" href="/visioncrafters-logo-transparent.png">Open Asset</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="preview">
+            <img src="/visioncrafters-logo-vector.png" alt="Vector-style logo export">
+          </div>
+          <h2 class="name">Vector Style Export</h2>
+          <p class="sub">Clean PNG export suited for presentations, documents, and crisp digital placements.</p>
+          <a class="url" href="/visioncrafters-logo-vector.png">https://assets.visioncrafters.ro/visioncrafters-logo-vector.png</a>
+          <div class="actions">
+            <a class="button primary" href="/visioncrafters-logo-vector.png">Open Asset</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="preview">
+            <img src="/visioncrafters-logo-ps.png" alt="Photoshop logo export">
+          </div>
+          <h2 class="name">Photoshop Export</h2>
+          <p class="sub">Larger production export kept public for cases where the higher-resolution PNG is preferred.</p>
+          <a class="url" href="/visioncrafters-logo-ps.png">https://assets.visioncrafters.ro/visioncrafters-logo-ps.png</a>
+          <div class="actions">
+            <a class="button primary" href="/visioncrafters-logo-ps.png">Open Asset</a>
+          </div>
+        </article>
+      </section>
+
+      <p class="foot">
+        If you add more files later, keep names lowercase and hyphenated for clean permanent URLs.
+      </p>
+    </main>
+  </body>
+</html>
